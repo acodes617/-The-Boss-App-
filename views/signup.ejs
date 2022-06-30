@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>THE BOSS APP</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="loginh1">$ THE BOSS APP $</h1>
+    <div class="container1">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="login">SIGNUP:</h1>
+
+        <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <!-- LOGIN FORM -->
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label>CREATE A UNIQUE USERNAME/NAME:</label>
+            <input type="text" class="form-control" name="email" />
+          </div>
+          <div class="form-group">
+            <label>CREATE A PASSWORD:</label>
+            <input type="password" class="form-control" name="password" />
+          </div>
+
+          <button type="submit" class="loginbtn">Signup</button>
+        </form>
+
+        <hr />
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">back to login!</a>.</p>
+      </div>
+    </div>
+  </body>
+</html>

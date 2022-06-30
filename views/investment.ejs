@@ -1,0 +1,299 @@
+<h1>My Investments</h1>
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Your Investments</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/favicon.ico"
+    />
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Kavoon&family=Old+Standard+TT&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/vendor/bootstrap.min.css"
+    />
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bicon.min.css" />
+    <!-- Flat Icon CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/flaticon.css" />
+    <!-- audio & video player CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css" />
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
+    <!-- nice-select CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/nice-select.css"
+    />
+    <!-- perfect scrollbar css -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/perfect-scrollbar.css"
+    />
+    <!-- light gallery css -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/lightgallery.min.css"
+    />
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+        <div class="header-top sticky bg-white d-none d-lg-block">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <!-- header top navigation start -->
+                <div class="header-top-navigation">
+                  <nav>
+                    <ul>
+                      <li class="active"><a href="/profile">Home</a></li>
+                      <li class="active"><a href="/about">About</a></li>
+                      <li class="active"><a href="/investments">Investments</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- header top navigation start -->
+              </div>
+  
+              <div class="col-md-2">
+                <!-- brand logo start -->
+                <div class="brand-logo text-center">
+                  <a href="/profile">
+                    <img src="/img/crownlogo.gif" alt="brand logo" class= "logo1" />
+                  </a>
+                </div>
+                <!-- brand logo end -->
+              </div>
+  
+              <div class="col-md-5">
+                <div
+                  class="header-top-right d-flex align-items-center justify-content-end"
+                >
+                  <!-- header top search start -->
+                  <div class="header-top-search">
+                    <h3 class="quote">"An investment in knowledge pays the best interest."</h3>
+                  </div>
+             
+            <a href="/logout" class="">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   </header>
+    <main>
+      <div class="main-wrapper">
+        <!-- profile banner area start -->
+        <div
+          
+          data-bg=""
+        ><img src ="/img/piggybanks.gif" class="investmentpic"></div>
+        <!-- profile banner area end -->
+
+        <!-- profile menu area start -->
+     
+        <!-- profile menu area end -->
+
+        <!-- sendary menu start -->
+    
+        <!-- sendary menu end -->
+
+        <!-- about author details start -->
+        <div class="about-author-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+
+             
+              <div class="col-lg-9">
+                <div class ="investinstructions">
+                <div class="about-description">
+                  <div class="tab-content">
+                    <div class="tab-pane fade active show" id="one">
+                      
+                      <div class="work-zone">
+                        <div class="author-desc-title d-flex">
+                          
+                          <h6 class="author">
+                            <span>
+                                Hey <%= user.local.email %>!
+                            </span>
+                          </h6>
+                        
+                        </div>
+                        <p>
+                         This is where you can keep track of your investments! Whether you sold or bought 
+                         stocks, cryptos, or even NFTs, this section will allow you to record when, how much, and maybe even why you chose to do what you did! Don't worry, this page will be completely private so please feel free to share your deepest darkest trading secrets!(Just kidding!) But seriously, formulate a trading strategy/useful method that you see is working and maybe share the sauce back at the home page! Either way, may all your investments hit the moon! I wish you the best of luck!
+                        </p>
+                       
+                      </div>
+                    </div>
+                 
+                   
+               
+                
+                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- about author details start -->
+
+        <!-- photo section start -->
+        <div class="photo-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="content-box">
+                  <h5 class="content-title">Top Investments</h5>
+                  
+
+
+                  <% if (user.local.email) { %>
+                    <form action="/investingideas" method="POST">
+
+                    <input type="radio" name="typepost" id="" value="general">
+                    <label>General</label>
+                    <input type="radio" name="typepost" id="" value="buying">
+                    <label>Buying</label>
+                    <input type="radio" name="typepost" id="" value="selling">
+                    <label>Selling</label>
+
+
+                    <input type="text" placeholder="STOCKS/CRYPTOS/NFTS/ETC... YOU WANT TO GO INTO DETAIL ABOUT!" name="invest"
+                    class= "feedBox invest"
+                    id ="searching"
+                    aria-disabled="true">
+                  
+                    <input type="text" placeholder="Amount in total?" name="total"
+                    class= "feedBox invest"
+                    id ="searching"
+                    aria-disabled="true">
+                    <input type="text" placeholder="Amount sold?" name="sold"
+                    class= "feedBox invest"
+                    id ="searching"
+                    aria-disabled="true">
+                  
+                    <input type="text" placeholder="Thoughts? Comments?" name="msg"
+                    class= "feedBox"
+                    aria-disabled="true">
+                    <input type="text" placeholder="What strategy are you using that may or may not be working? How can you improve/continue?" name="strategy"
+                    class= "feedBox"
+                    aria-disabled="true">
+
+
+
+                    <input type="text" placeholder="What day and time is it right now? Use any date format that will help you mark this day down!" name="time"
+                    class= "feedBox"
+                    aria-disabled="true">
+                 
+                    <button class="btn-share" type="submit">POST</button>
+                    
+                    </form>
+
+                <% } %>           
+                <div>
+                </div>
+       
+      </div>
+    </main>
+    
+                 
+    <ul class="">
+  
+      <% for(let i=0; i<investing.length; i++) {%>
+        <% let color= "yellow" %>
+      <%  if (investing[i].typepost === "buying"){ %>
+      <% color= "green" %> 
+      <% }  %>
+      <% if(investing[i].typepost === "selling"){%>
+      <% color= "red" %>
+      <% }  %>
+
+<li class="investment1">
+      <div style="background-color:<%= color %>;" class="typepost"><%= investing[i].typepost %></div>
+  
+      <hr class ="line">
+      <span class ="investment">Investment: <%= investing[i].invest %></span> 
+      <hr class ="line">
+      <span class ="userMessage">Thoughts: <%= investing[i].msg %></span>
+      <hr class ="line">
+      <span class ="userMessage">Total Bought/Collected: <%= investing[i].total %></span>
+      <hr class ="line">
+      <span class ="userName">Total Sold: <%= investing[i].sold %></span> 
+      <hr class ="line">
+      <span class ="investment">Strategy: <%= investing[i].strategy %></span> 
+      <hr class ="line">
+      <span class ="userMessage">Date and Time: <%= investing[i].time %></span>
+     
+ 
+</li>
+  <% } %>                  
+</ul>
+
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+      <i class="bi bi-finger-index"></i>
+    </div>
+
+    <!-- JS
+============================================ -->
+
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <!-- nice select JS -->
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <!-- audio video player JS -->
+    <script src="assets/js/plugins/plyr.min.js"></script>
+    <!-- perfect scrollbar js -->
+    <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <!-- light gallery js -->
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
+    <!-- image loaded js -->
+    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <!-- isotope filter js -->
+    <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+    <!-- Main JS -->
+    <script src="main.js"></script>
+  </body>
+</html>

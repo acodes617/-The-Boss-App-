@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+       
+        <div class="col-sm-6">
+          <h3>Posts</h3>
+          <ul class="posts">
+            <% let color= "yellow" %>
+            
+            <% for(let i=0; i<posts.length; i++) {%>
+
+              <%  if (posts[i].typepost === "buying"){ %>
+                <% color= "green" %> 
+                <% }  %>
+
+                <% if(posts[i].typepost === "selling"){%>
+                <% color= "red" %>
+                <% }  %>
+
+             
+
+
+              <li class="message1 ">
+                <div class="typepost"style="background-color:<%= color %>;"><%= posts[i].typepost %></div>
+                <span class ="userName"><a href="/about"><%= posts[i].name %></a></span> 
+                <hr class ="line">
+                <span class ="investment"><%= posts[i].invest %></span> 
+                <hr class ="line">
+                <a href="/post/<%= posts[i]._id %>">
+                  <img src="<%= posts[i].img %>" alt="">
+                </a>  
+                <hr class ="line">
+                <span class ="userMessage"><%= posts[i].msg %></span>
+                <hr class ="line">
+            
+               
+                  <form>
+                    <!-- <span><i class="fa-solid fa-heart"></i></span>
+                    <span><i class="fa-solid fa-thumbs-down"></i></span> -->
+                  
+                  <input value="<%= posts[i]._id %>" class ="objectId" hidden>
+                 
+                  
+                  <input type="text" 
+                  name="comment" 
+                  id="commentBox"  
+                  aria-disabled="true" 
+                  placeholder="Write your comment here..." 
+                  class ="commentbox">
+                  
+
+                  <button class="addComment" type="button">POST</button>
+                  
+                  </form>
+              <!--looping through the entire comment array-->
+              <!---->
+              <!--looping through the entire comment array-->
+              
+        
+              </li> 
+            <% } %>
+            
+          </ul>
+
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

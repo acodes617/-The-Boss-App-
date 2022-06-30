@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>Posts</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        
+        <a href="/profile">Profile</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+
+          <h3 class ="posts">All Posts </h3>
+
+          
+          <ul>
+            
+            
+            <% for(let i=0; i<posts.length; i++) {%>
+              <% let color= "yellow" %>
+              <%  if (posts[i].typepost === "BUYING"){ %>
+                <% color= "green" %> 
+                <% }  %>
+
+                <% if(posts[i].typepost === "SELLING"){%>
+                <% color= "red" %>
+                <% }  %>
+
+             
+
+
+              <li class="message1 ">
+                <div class="typepost"style="background-color:<%= color %>;"><%= posts[i].typepost %></div>
+                <span class ="userName"><a href="/about"><%= posts[i].name %></a></span> 
+                <hr class ="line">
+                <span class ="investment"><%= posts[i].invest %></span> 
+                <hr class ="line">
+                <a href="/post/<%= posts[i]._id %>">
+                  <img src="<%= posts[i].img %>" alt="">
+                </a>  
+                <hr class ="line">
+                <span class ="userMessage"><%= posts[i].msg %></span>
+                <hr class ="line">
+            
+               
+                  <form>
+                    <!-- <span><i class="fa-solid fa-heart"></i></span>
+                    <span><i class="fa-solid fa-thumbs-down"></i></span> -->
+                  
+                  <input value="<%= posts[i]._id %>" class ="objectId" hidden>
+    
+                  
+                  </form>
+              <!--looping through the entire comment array-->
+              <!---->
+              <!--looping through the entire comment array-->
+              
+        
+              </li> 
+            <% } %>
+            
+          </ul>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

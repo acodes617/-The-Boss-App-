@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title> About</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href=""
+    />
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Kavoon&family=Old+Standard+TT&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/vendor/bootstrap.min.css"
+    />
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bicon.min.css" />
+    <!-- Flat Icon CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/flaticon.css" />
+    <!-- audio & video player CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css" />
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/slick.min.css" />
+    <!-- nice-select CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/nice-select.css"
+    />
+    <!-- perfect scrollbar css -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/perfect-scrollbar.css"
+    />
+    <!-- light gallery css -->
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/lightgallery.min.css"
+    />
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        
+        <a href="/profile">Profile</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+<header>
+  <div class="header-top sticky bg-white d-none d-lg-block">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <!-- header top navigation start -->
+          <div class="header-top-navigation">
+            <nav>
+              <ul>
+                <li class="active"><a href="/profile">home</a></li>
+                <li class="active"><a href="/investment">investments</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- header top navigation start -->
+        </div>
+
+        <div class="col-md-2">
+          <!-- brand logo start -->
+
+          <div class="brand-logo text-center">
+            <a href="/profile">
+              <img src="/img/crownlogo.gif" alt="brand logo" class= "logo1" />
+            </a>
+          </div>
+          <!-- brand logo end -->
+        </div>
+
+        <div class="col-md-5">
+          <div
+            class="header-top-right d-flex align-items-center justify-content-end"
+          >
+            <!-- header top search start -->
+     
+              
+            <form action ="/search" class="top-search-box" method ="post">
+              <input type="text" placeholder="Search" class="top-search-field" 
+              name="searchUser"/>
+                  <button class="top-search-btn" type ="submit">
+                    <i class="flaticon-search"></i>
+                  </button>
+              </form>
+
+              
+   
+
+            <!-- header top search end -->
+
+            <a href="/logout" class="">Logout</a>
+            
+</header>
+
+<main>
+  <div class= "aboutme">
+    <div class="photo-section about">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content-box">
+              <h5 class="content-title"> Get To Know More About Me!
+              </h5>
+              <div>
+                                        
+                <ul class="aboutposts">
+                    <% let color= "green" %>
+                    <% for(let i=0; i<about.length; i++) {%>
+                    <%  if (about[i].typepost === "Cryptos"){ %>
+                    <% color= "gold" %> 
+                    <% }  %>
+                    <% if(about[i].typepost === "NFTs"){%>
+                    <% color= "purple" %>
+                    <% }  %>
+                    <%  if (about[i].typepost === "Stocks/Cryptos/NFTs"){ %>
+                    <% color= "grey" %> 
+                    <% }  %>
+                    <% if(about[i].typepost === "Stocks/Cryptos"){%>
+                    <% color= "limegreen" %>
+                    <% }  %>
+                    <%  if (about[i].typepost === "Cryptos/NFTs"){ %>
+                    <% color= "brown" %> 
+                    <% }  %>
+                    <% if(about[i].typepost === "Stocks/NFTs"){%>
+                    <% color= "darkgrey" %>
+                    <% }  %>
+                    <%  if (about[i].typepost === "Others"){ %>
+                    <% color= "orange" %> 
+                    <% }  %>
+                    <% if(about[i].typepost === "None"){%>
+                    <% color= "black" %>
+                    <% }  %>
+    
+            <li class="">
+              <div class ="pfp">
+              <img src="<%= about[i].img %>" class ="aboutpicture" />
+
+            </div>
+
+            <div class ="aboutyou">
+                    <div style="background-color:<%= color %>;" class="investIn"><span>What I Invest In: </span><%= about[i].typepost %></div>
+                    <span class =""><span>A Little Bit About Me: </span><%= about[i].bio %></span> 
+                    <hr class ="line">
+                    <span class =""><span>I've Been Investing For: </span><%= about[i].invest %></span> 
+                    <hr class ="line">
+                    <span class =""><span>My Favorite Trading Platform(s): </span><%= about[i].platform %></span>
+                    <hr class ="line">
+                    <span class =""><span>My Investment Recommendations: <span><%= about[i].recommendations %></span>
+                    <hr class ="line">
+                    <span class =""><span>Check This Out: </span><a href="<%= about[i].links%>"><%= about[i].links %></a></span> 
+                    <hr class ="line">
+                    <span class =""><span>Favorite Quote(s): </span> <%= about[i].quotes %></span> 
+                    <hr class ="line">
+                    <span class =""><span>Other Information/Advice: </span> <%= about[i].otherinfo %></span>
+            </li>
+                <% } %>             
+            </ul>
+          </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+<div>
+
+<div class="photo-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="content-box">
+          <h5 class="content-title">Informational Form!</h5>
+          
+         
+
+
+          <% if (user.local.email) { %>
+            <form action="/bio" method="POST"  enctype="multipart/form-data">
+            <h4>I mainly invest in:</h4>
+            <input type="radio" name="typepost" id="" value="Stocks">
+            <label>Stocks</label>
+            <input type="radio" name="typepost" id="" value="Cryptos">
+            <label>Cryptos</label>
+            <input type="radio" name="typepost" id="" value="NFTs">
+            <label>NFTS</label>
+            <input type="radio" name="typepost" id="" value="Stocks/Cryptos/NFTs">
+            <label>Stocks/Cryptos/NFTs</label>
+            <input type="radio" name="typepost" id="" value="Stocks/Cryptos">
+            <label>Stocks/Cryptos</label>
+            <input type="radio" name="typepost" id="" value="Stocks/NFTs">
+            <label>Stocks/NFTs</label>
+            <input type="radio" name="typepost" id="" value="Cryptos/NFTs">
+            <label>Cryptos/NFTS</label>
+            <input type="radio" name="typepost" id="" value="Others">
+            <label>Other Investments</label>
+            <input type="radio" name="typepost" id="" value="None">
+            <label>None, I just started!</label>
+
+              
+            <input type="text" placeholder="A Little Bit About Me: (Introduce yourself! People will be able to search your name up so include it here! Maybe toss up a small fun fact and any hobbies that you like/participate in!)" name="bio"
+            class= "bio"
+            id ="searching"
+            aria-disabled="true">
+
+            <input type="text" placeholder="I've Been Investing For: (How long have you been investing for?)" name="invest"
+            class= "feedBox invest"
+            id ="searching"
+            aria-disabled="true">
+          
+            <input type="text" placeholder="My Favorite Trading Platform(s): (What investing platform(s) do you mainly use?)" name="platform"
+            class= "feedBox invest"
+            id ="searching"
+            aria-disabled="true">
+
+            <input type="text" placeholder="My Investment Recommendations: (What investment(s) do you recommend people to buy/sell?)" name="recommendations"
+            class= "feedBox invest"
+            id ="searching"
+            aria-disabled="true">
+          
+            <input type="text" placeholder="Check This Link Out: (Post the links to NFTs/other investments you would like people to visit here!)" name="links"
+            class= "feedBox"
+            aria-disabled="true">
+
+            <input type="text" placeholder="Favorite Quote(s): (Quotes/Motivational words you live by!)" name="quotes"
+            class= "feedBox"
+            aria-disabled="true">
+
+            <input type="text" placeholder="Other Information/Advice: (Other information you would like to provide!)" name="otherinfo"
+            class= "feedBox"
+            aria-disabled="true">
+         
+            <input type="file" name="file-to-upload">
+
+            <button type="submit" class="btn btn-warning btn-lg">Post!</button>
+            
+            </form>
+
+        <% } %>
+
+      </div>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                    
+
+                    
+
+
+
+<!-- Scroll to top start -->
+<div class="scroll-top not-visible">
+  <i class="bi bi-finger-index"></i>
+</div>
+
+
+<!-- JS
+============================================ -->
+
+<!-- Modernizer JS -->
+<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<!-- jQuery JS -->
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<!-- Slick Slider JS -->
+<script src="assets/js/plugins/slick.min.js"></script>
+<!-- nice select JS -->
+<script src="assets/js/plugins/nice-select.min.js"></script>
+<!-- audio video player JS -->
+<script src="assets/js/plugins/plyr.min.js"></script>
+<!-- perfect scrollbar js -->
+<script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+<!-- light gallery js -->
+<script src="assets/js/plugins/lightgallery-all.min.js"></script>
+<!-- image loaded js -->
+<script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<!-- isotope filter js -->
+<script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+<!-- Main JS --> 
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
